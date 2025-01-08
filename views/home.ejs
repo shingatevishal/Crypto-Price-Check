@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Price Check</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
+</head>
+<body>
+    <%- include ('partials/header.ejs') %>
+    <div class="px-4 py-5 my-5 text-center">
+      <img class="d-block mx-auto mb-4" src="\images\money-exchange.png" alt="" width="72" height="57">
+      <h1 class="display-5 fw-bold text-body-emphasis">Crypto Price Check</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">A crypto price check provides real-time or latest updates on the current value of cryptocurrencies like Bitcoin, Ethereum, or others. It typically includes the price, percentage change, and market trends.</p>
+        <form action="/submit" method="POST">
+          <label for="crypto">Select a Cryptocurrency</label>
+          <select class="form-select" id="crypto" name="crypto">
+            <option value="bitcoin">Bitcoin</option>
+            <option value="ethereum">Ethereum</option>
+            <option value="ripple">Ripple</option>
+            <option value="litecoin">Litecoin</option>
+            <option value="dogecoin">Dogecoin</option>
+          </select>
+          <label for="currency">Select a Currency</label>
+          <select class="form-select" id="currency" name="currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="INR">INR</option>
+            <option value="AUD">AUD</option>
+          </select>
+          <button type="submit" class="btn btn-primary mt-3">Check Price</button>
+          <h2> <%= locals.price %> </h2>
+        </form>
+      </div>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>
