@@ -1,4 +1,4 @@
-# Crypto-Price-Check
+# crypto-price-check
 Step 1:
 Firstly you have to clone the repo in your local computer.
 Step 2:
